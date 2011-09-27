@@ -5,6 +5,16 @@ RailsApp::Application.routes.draw do
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
+  
+  namespace 'api' do
+    scope :constraints => ApiVersion.new(1) do
+      match 'v' => lambda {|r| [200, {}, ['v1']]}
+    end
+
+    scope :constraints => ApiVersion.new(2) do
+      match 'v' => lambda {|r| [200, {}, ['v2']]}
+    end
+  end
 
   # Sample of named route:
   #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
