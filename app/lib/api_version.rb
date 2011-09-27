@@ -1,3 +1,4 @@
+# from http://freelancing-gods.com/posts/versioning_your_ap_is
 class ApiVersion
   def initialize(version)
     @version = version
