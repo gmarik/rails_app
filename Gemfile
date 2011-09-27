@@ -28,3 +28,6 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'ruby-debug'
 
+group :test, :development do
+  gem 'minitest-rails'
+end
